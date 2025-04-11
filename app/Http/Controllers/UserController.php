@@ -57,6 +57,8 @@ class UserController extends Controller
             'password' => Hash::make('default123')
         ]);
 
+        // dd($user, $coursePrice, $paymentLink);
+
         // Send Email
         Mail::to($user->email)->send(new WelcomeMail($user, $coursePrice, $paymentLink));
 

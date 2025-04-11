@@ -9,7 +9,7 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class WelcomeMail extends Mailable implements ShouldQueue
+class WelcomeMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -49,16 +49,8 @@ class WelcomeMail extends Mailable implements ShouldQueue
                 'course_name' => $this->user->course,
                 'course_price' => $this->coursePrice,
                 'payment_link' => $this->paymentLink,
-                'support_email' => 'admin@sakarltech.com',
+                'support_email' => 'support@sakarltech.com',
             ],
         );
-    }
-
-    /**
-     * Get the attachments for the message.
-     */
-    public function attachments(): array
-    {
-        return [];
     }
 }
