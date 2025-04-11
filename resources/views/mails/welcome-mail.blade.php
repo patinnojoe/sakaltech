@@ -81,7 +81,7 @@
         <div class="content">
             <p>Hi <span class="highlight">{{ $name }}</span>,</p>
             <p>Thank you for registering for the <span class="highlight">{{ $course_name }}</span> course.</p>
-            <p>The total cost of the course is <strong>${{ course_price }}</strong>.</p>
+            <p>The total cost of the course is <strong> {{ $course_price }}</strong>.</p>
             <p>To complete your registration, please proceed with the payment using the link below:</p>
 
             <a href="{{ $payment_link }}" class="cta-button">Make Payment</a>
