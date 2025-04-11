@@ -68,7 +68,11 @@ class UserController extends Controller
 
         return response()->json([
             'message' => 'Registration successful. Email sent.',
-            'user' => $user
+            'user' => $user,
+            'success' => true
+
+
+
         ]);
     }
 
