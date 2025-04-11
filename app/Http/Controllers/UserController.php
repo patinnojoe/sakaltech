@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\AdminNotifyMail;
 use App\Mail\WelcomeMail;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -61,6 +62,9 @@ class UserController extends Controller
 
         // Send Email
         Mail::to($user->email)->send(new WelcomeMail($user, $coursePrice, $paymentLink));
+        Mail::to("support@sakarltech.com")->send(new AdminNotifyMail($user, $coursePrice, $paymentLink));
+
+
 
         return response()->json([
             'message' => 'Registration successful. Email sent.',
